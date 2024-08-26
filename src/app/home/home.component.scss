@@ -1,0 +1,25 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+.title-class{
+    font-size: 1.5em;
+    font-weight: bold;
+    font-family: 'Lato';
+}
+
+.input-field{
+  width: 50%;
+}
+
+.container-position{
+  position: absolute; 
+  margin-top: 3%; 
+  margin-left: 1%;
+}
+
+.btn-group{
+  display: flex;
+  gap: 5%;
+  width: 50%;
+}

@@ -1,0 +1,61 @@
+<h2 style="margin-top:1%; margin-left:1%">Enter New Registration</h2>
+<div class="container container-position">
+    <div class="row row-group">
+        <form [formGroup]="registrationForm">
+            <div class="form-group-style">
+                <span class="label-class">
+                    <label>User Name</label>
+                    <span class="astrix"> * </span>
+                  </span>
+                  <input type="text" matInput class="form-control input-field" formControlName="name">
+            </div>
+            <span class="error-message" *ngIf="
+            registrationForm.get('name')?.invalid && 
+            (registrationForm.get('name')?.dirty ||
+            registrationForm.get('name')?.touched)">
+            <span *ngIf="registrationForm.get('name')?.errors?.['required']">
+                This field is required
+            </span>
+        </span>
+
+            <br><br>
+            <div class="form-group-style">
+                <span class="label-class">
+                    <label>Password</label>
+                    <span class="astrix"> * </span>
+                  </span>
+                  <input type="text" matInput class="form-control input-field" formControlName="password">
+            </div>
+            <span class="error-message" *ngIf="
+            registrationForm.get('password')?.invalid && 
+            (registrationForm.get('password')?.dirty ||
+            registrationForm.get('password')?.touched)">
+            <span *ngIf="registrationForm.get('password')?.errors?.['required']">
+                This field is required
+            </span>
+        </span>
+
+            <br><br>
+            <div class="form-group-style">
+                <span class="label-class">
+                    <label>Email</label>
+                    <span class="astrix"> * </span>
+                  </span>
+                  <input type="text" matInput class="form-control input-field" formControlName="email">
+            </div>
+            <span class="error-message" *ngIf="
+            registrationForm.get('email')?.invalid &&
+              (registrationForm.get('email')?.dirty ||
+              registrationForm.get('email')?.touched)
+            ">
+          <span *ngIf="registrationForm.get('email')?.errors?.['required']">
+            This field is required.
+          </span>
+        </span>
+        </form>
+    </div>
+    <div class="btn-group">
+        <button class="btn btn-primary" (click)="onBack()">Back to Login</button>
+        <button class="btn btn-success">Register</button>
+    </div>
+</div>
