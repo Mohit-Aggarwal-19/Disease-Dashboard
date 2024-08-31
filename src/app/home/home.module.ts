@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { MaterialModule } from '../material.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RegistrationComponent } from '../registration/registration.component';
+import { SizerComponent } from '../sizer/sizer.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -15,7 +16,8 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     HomeComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    SizerComponent
   ],
   imports: [
     CommonModule,

@@ -13,55 +13,56 @@
 </mat-toolbar>
 
 <h2 style="margin-top:1%; margin-left:1%">Welcome To Diesease Dashboard</h2>
+<app-sizer [(size)]="fontSizePx"></app-sizer>
+<div [style.font-size.px]="fontSizePx">
+  <div class="container container-position">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-md-8 col-md-offset-2 col-sm-offset-1">
+        <form [formGroup]="loginForm">
+          <div class="form-group" style="display: flex;gap: 10px;">
+            <span class="label-class">
+              <label>User Name</label>
+              <span class="astrix"> * </span>
+            </span>
 
-<div class="container container-position">
-  <div class="row">
-    <div class="col-xs-12 col-sm-10 col-md-8 col-md-offset-2 col-sm-offset-1">
-      <form [formGroup]="loginForm">
-        <div class="form-group" style="display: flex;gap: 10px;">
-          <span class="label-class">
-            <label>User Name</label>
-            <span class="astrix"> * </span>
-          </span>
-
-          <input type="text" class="form-control input-field" formControlName="userName" />
-        </div>
-        <span class="error-message" *ngIf="
+            <input type="text" class="form-control input-field" formControlName="userName" />
+          </div>
+          <span class="error-message" *ngIf="
               loginForm.get('userName')?.invalid &&
               (loginForm.get('userName')?.dirty ||
                 loginForm.get('userName')?.touched)
             ">
-          <span *ngIf="loginForm.get('userName')?.errors?.['required']">
-            This field is required.
+            <span *ngIf="loginForm.get('userName')?.errors?.['required']">
+              This field is required.
+            </span>
           </span>
-        </span>
 
-        <br /><br />
-        <div class="form-group" style="display: flex;gap: 10px;">
-          <span class="label-class">
-            <label>Password</label>
-            <span class="astrix"> * </span>
-          </span>
-          <input type="text" class="form-control input-field" formControlName="password" />
-        </div>
-        <span class="error-message" *ngIf="
+          <br /><br />
+          <div class="form-group" style="display: flex;gap: 10px;">
+            <span class="label-class">
+              <label>Password</label>
+              <span class="astrix"> * </span>
+            </span>
+            <input type="text" class="form-control input-field" formControlName="password" />
+          </div>
+          <span class="error-message" *ngIf="
               loginForm.get('password')?.invalid &&
               (loginForm.get('password')?.dirty ||
                 loginForm.get('password')?.touched)
             ">
-          <span *ngIf="loginForm.get('password')?.errors?.['required']">
-            This field is required.
+            <span *ngIf="loginForm.get('password')?.errors?.['required']">
+              This field is required.
+            </span>
           </span>
-        </span>
-        <br /><br />
+          <br /><br />
 
-      </form>
+        </form>
+      </div>
+      <div class="btn-group">
+        <button class="btn btn-primary" style="border-radius:5px;">Login</button>
+        <button class="btn btn-success" style="border-radius:5px;" (click)="onRegister()">Register</button>
+      </div>
     </div>
-    <div class="btn-group">
-      <button class="btn btn-primary" style="border-radius:5px;">Login</button>
-      <button class="btn btn-success" style="border-radius:5px;" (click)="onRegister()">Register</button>
-    </div>
+
   </div>
-  
 </div>
-

@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 export class HomeComponent {
   Title:string="Disease Dashboard";
   loginForm!:FormGroup;
+  fontSizePx = 16;
 
   constructor(private formBuilder:FormBuilder,
     private router: Router
